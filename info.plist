@@ -6,7 +6,7 @@
 	<string>mn.frd.rexcape</string>
 	<key>connections</key>
 	<dict>
-		<key>74C87509-B346-4AC3-81F4-FF1F300CD23F</key>
+		<key>343311DD-86AD-4A32-8D07-A664C1C6F47A</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -19,17 +19,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>E4BE5335-B0BF-4E5B-BA49-4FA5AD68EA3A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>7A2B2E18-ABB5-44D4-A5EB-EB55CACB2FCF</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>74C87509-B346-4AC3-81F4-FF1F300CD23F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -77,38 +66,39 @@
 			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
 				<key>keyword</key>
-				<string>rexcape</string>
+				<string>rexcapee</string>
+				<key>script</key>
+				<string>QUERY="{query}"
+
+echo "&lt;?xml version=\"1.0\"?&gt;"
+echo "&lt;items&gt;"
+
+if [[ ! -z $QUERY ]]
+then
+	RESULT=$(python ./rexcape.py "$QUERY")
+	echo "&lt;item uid=\"result\" arg=\"$RESULT\"&gt;&lt;title&gt;$RESULT&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+else
+	echo "&lt;item uid=\"\" arg=\"waiting\"&gt;&lt;title&gt;Waiting for string...&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+fi
+
+echo "&lt;/items&gt;"
+</string>
 				<key>subtext</key>
 				<string>String to escape: "{query}"</string>
-				<key>text</key>
+				<key>title</key>
 				<string>Type in the string you want to escape in a RegEx compatible way</string>
+				<key>type</key>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>7A2B2E18-ABB5-44D4-A5EB-EB55CACB2FCF</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>import re
-string = "{query}"
-print re.escape(string)</string>
-				<key>type</key>
-				<integer>3</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>74C87509-B346-4AC3-81F4-FF1F300CD23F</string>
+			<string>343311DD-86AD-4A32-8D07-A664C1C6F47A</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -135,22 +125,17 @@ print re.escape(string)</string>
 		<key>1E880D6A-1FBB-40E8-8ED6-DEBFD8EFAE11</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>20</real>
 		</dict>
-		<key>74C87509-B346-4AC3-81F4-FF1F300CD23F</key>
+		<key>343311DD-86AD-4A32-8D07-A664C1C6F47A</key>
 		<dict>
 			<key>ypos</key>
-			<real>70</real>
-		</dict>
-		<key>7A2B2E18-ABB5-44D4-A5EB-EB55CACB2FCF</key>
-		<dict>
-			<key>ypos</key>
-			<real>60</real>
+			<real>180</real>
 		</dict>
 		<key>E4BE5335-B0BF-4E5B-BA49-4FA5AD68EA3A</key>
 		<dict>
 			<key>ypos</key>
-			<real>140</real>
+			<real>190</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
