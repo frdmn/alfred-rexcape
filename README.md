@@ -1,7 +1,7 @@
 alfred-rexcape
 ==============
 
-**Caution: This project is discontinued. Please do not expect any updates or support. Feel free to fork and maintain by yourself!**
+**Caution: This project is discontinued. Please do not expect any updates or support in the future. Feel free to fork and maintain by yourself!**
 
 Alfred workflow to escape a string in a RegEx compatible (i.e. search and replace with sed) way:
 
