@@ -1,6 +1,8 @@
 alfred-rexcape
 ==============
 
+**Caution: This project is discontinued. Please do not expect any updates or support. Feel free to fork and maintain by yourself!**
+
 Alfred workflow to escape a string in a RegEx compatible (i.e. search and replace with sed) way:
 
 ![](http://cl.ly/image/0A0H1C440x37/content)
@@ -17,3 +19,7 @@ Alfred workflow to escape a string in a RegEx compatible (i.e. search and replac
 
 1. Download the raw `Rexcape.alfredworkflow` file
 1. Double click to execute and import that workflow into Alfred
+
+## License
+
+[MIT](LICENSE)
